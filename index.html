@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Free Currency Converter Online | Real-time Exchange Rates</title>
+<meta name="description" content="Free currency converter tool with real-time exchange rates. Convert USD to PKR, EUR to GBP, and more instantly. No sign-up required." />
+<meta name="keywords" content="currency converter, free currency converter, USD to PKR, exchange rates, money conversion, online currency exchange" />
+<meta name="robots" content="index,follow" />
+<link rel="canonical" href="https://example.com/currency-converter" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Free Currency Converter Online | Real-time Exchange Rates" />
+<meta property="og:description" content="Convert between 150+ currencies instantly. Live exchange rates. No sign-up required." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://example.com/currency-converter" />
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Free Currency Converter Online | Real-time Exchange Rates" />
+<meta name="twitter:description" content="Convert between 150+ currencies instantly. Live exchange rates. No sign-up required." />
+
+<!-- JSON-LD for WebApplication -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free Currency Converter",
+  "url": "https://example.com/currency-converter",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "description": "Free currency converter with real-time exchange rates."
+}
+</script>
+
+<style>
+  :root {
+    --bg: #0f172a;
+    --card: #111827;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --accent: #22c55e;
+  }
+  *{box-sizing:border-box}
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';
+    background: linear-gradient(180deg, #0b1220, #0f172a);
+    color: var(--text);
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+  }
+  .wrap {
+    width: 100%;
+    max-width: 760px;
+  }
+  header {
+    text-align: center;
+    margin-bottom: 18px;
+  }
+  h1 {
+    margin: 0 0 8px 0;
+    font-size: 32px;
+    line-height: 1.2;
+  }
+  p.subtitle {
+    margin: 0;
+    color: var(--muted);
+  }
+  .card {
+    background: rgba(17, 24, 39, 0.85);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  }
+  .row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  @media (min-width: 640px) {
+    .row {
+      grid-template-columns: 1.2fr 1fr 1fr auto;
+      align-items: end;
+    }
+  }
+  label {
+    display: block;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  input, select {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: #0b1220;
+    color: var(--text);
+    outline: none;
+  }
+  button {
+    width: 100%;
+    padding: 13px 16px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    background: var(--accent);
+    color: #0b1220;
+    cursor: pointer;
+    transition: transform 0.05s ease-in-out, filter 0.2s;
+  }
+  button:hover { filter: brightness(1.05); }
+  button:active { transform: translateY(1px); }
+  .result {
+    margin-top: 16px;
+    padding: 14px;
+    background: #0b1220;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    font-size: 18px;
+    text-align: center;
+  }
+  .help {
+    margin-top: 18px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  footer {
+    margin-top: 22px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+  }
+  .content {
+    margin-top: 22px;
+    line-height: 1.7;
+    color: #d1d5db;
+  }
+  .content h2, .content h3 { color: #fff; }
+  .popular {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+    gap: 8px;
+    padding-left: 0;
+    list-style: none;
+  }
+  .popular li {
+    background: #0b1220;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px;
+    padding: 8px 10px;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Free Currency Converter</h1>
+      <p class="subtitle">Real‑time exchange rates. 150+ currencies. No sign‑up.</p>
+    </header>
+
+    <div class="card">
+      <div class="row">
+        <div>
+          <label for="amount">Amount</label>
+          <input type="number" id="amount" placeholder="e.g., 100" min="0" step="any" />
+        </div>
+        <div>
+          <label for="fromCurrency">From</label>
+          <select id="fromCurrency" aria-label="From currency"></select>
+        </div>
+        <div>
+          <label for="toCurrency">To</label>
+          <select id="toCurrency" aria-label="To currency"></select>
+        </div>
+        <div>
+          <button id="convertBtn" aria-label="Convert">Convert</button>
+        </div>
+      </div>
+      <div class="result" id="result" role="status" aria-live="polite">Enter an amount and choose currencies to convert.</div>
+      <div class="help">Rates provided by exchangerate.host (free API).</div>
+    </div>
+
+    <div class="content">
+      <h2>About This Currency Converter</h2>
+      <p>This free currency converter updates rates in real-time using live exchange rate data. Convert between USD, PKR, EUR, GBP, and over 150 currencies instantly.</p>
+      <h3>Popular Conversions</h3>
+      <ul class="popular">
+        <li>USD to PKR</li>
+        <li>EUR to USD</li>
+        <li>GBP to PKR</li>
+        <li>USD to INR</li>
+        <li>AED to PKR</li>
+        <li>USD to EUR</li>
+      </ul>
+    </div>
+
+    <footer>
+      <p>Built with ❤️ using vanilla HTML, CSS, and JS.</p>
+    </footer>
+  </div>
+
+<script>
+const fromCurrency = document.getElementById("fromCurrency");
+const toCurrency = document.getElementById("toCurrency");
+const resultEl = document.getElementById("result");
+const btn = document.getElementById("convertBtn");
+const amountEl = document.getElementById("amount");
+
+async function loadSymbols() {
+  try {
+    const res = await fetch('https://api.exchangerate.host/symbols');
+    const data = await res.json();
+    if (!data || !data.symbols) throw new Error("Failed to load symbols.");
+    const symbols = data.symbols;
+    const fragmentFrom = document.createDocumentFragment();
+    const fragmentTo = document.createDocumentFragment();
+
+    Object.keys(symbols).sort().forEach(key => {
+      const opt1 = document.createElement("option");
+      opt1.value = key;
+      opt1.textContent = key + " — " + symbols[key].description;
+      fragmentFrom.appendChild(opt1);
+
+      const opt2 = document.createElement("option");
+      opt2.value = key;
+      opt2.textContent = key + " — " + symbols[key].description;
+      fragmentTo.appendChild(opt2);
+    });
+
+    fromCurrency.appendChild(fragmentFrom);
+    toCurrency.appendChild(fragmentTo);
+
+    fromCurrency.value = "USD";
+    toCurrency.value = "PKR";
+  } catch (e) {
+    console.error(e);
+    resultEl.textContent = "Unable to load currency list. Please refresh.";
+  }
+}
+
+async function convertCurrency() {
+  const amount = parseFloat(amountEl.value);
+  const from = fromCurrency.value;
+  const to = toCurrency.value;
+
+  if (!amount || amount <= 0) {
+    alert("Please enter a valid amount.");
+    return;
+  }
+
+  try {
+    resultEl.textContent = "Converting...";
+    const res = await fetch(\`https://api.exchangerate.host/convert?from=\${from}&to=\${to}&amount=\${amount}\`);
+    const data = await res.json();
+    if (typeof data.result !== "number") throw new Error("Bad response");
+    resultEl.textContent = \`\${amount} \${from} = \${data.result.toFixed(2)} \${to}\`;
+  } catch (e) {
+    console.error(e);
+    resultEl.textContent = "Conversion failed. Please try again.";
+  }
+}
+
+btn.addEventListener("click", convertCurrency);
+amountEl.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") convertCurrency();
+});
+
+loadSymbols();
+</script>
+</body>
+</html>
